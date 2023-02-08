@@ -3,6 +3,10 @@ import pybullet_data
 import time
 import pyrosim.pyrosim as pyrosim
 import numpy
+import math
+
+# Constants
+PI = math.pi
 
 physicsClient = p.connect(p.GUI)
 p.setAdditionalSearchPath(pybullet_data.getDataPath())
@@ -29,7 +33,7 @@ for x in range(0,100):
         bodyIndex = robotId,
         jointName = "Torso_BackLeg",
         controlMode = p.POSITION_CONTROL,
-        targetPosition = 0.0,
+        targetPosition = -PI/4.0,
         maxForce = 500)
 
 numpy.save("data/backLegSensorValues", backLegSensorValues)
