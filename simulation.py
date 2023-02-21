@@ -4,7 +4,6 @@ import pybullet as p
 import pybullet_data
 import time
 import pyrosim.pyrosim as pyrosim
-import numpy
 import constants as c
 
 class SIMULATION:
@@ -14,16 +13,16 @@ class SIMULATION:
         p.setGravity(0,0,-9.8)
         self.world = WORLD()
         self.robot = ROBOT()
+    
+    def __del__(self):
+        p.disconnect()
 
     def Run(self):
         for x in range(0,c.ITERATIONS):
-            print(x)
             p.stepSimulation()
             time.sleep(1/60)
 
-        #     backLegSensorValues[x] = pyrosim.Get_Touch_Sensor_Value_For_Link("BackLeg")
-        #     frontLegSensorValues[x] = pyrosim.Get_Touch_Sensor_Value_For_Link("FrontLeg")
-
+            self.robot.Sense(x)
         #     pyrosim.Set_Motor_For_Joint(
         #         bodyIndex = robotId,
         #         jointName = "Torso_FrontLeg",

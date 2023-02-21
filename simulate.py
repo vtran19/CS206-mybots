@@ -6,8 +6,6 @@ from simulation import SIMULATION
 
 
 
-# backLegSensorValues = numpy.zeros(c.ITERATIONS)
-# frontLegSensorValues = numpy.zeros(c.ITERATIONS)
 
 # targetAngles_FrontLeg = c.amplitude_FrontLeg * numpy.sin(c.frequency_FrontLeg * numpy.linspace(0, 2*c.PI, c.ITERATIONS) + c.phaseOffset_FrontLeg)
 # targetAngles_BackLeg = c.amplitude_BackLeg * numpy.sin(c.frequency_BackLeg * numpy.linspace(0, 2*c.PI, c.ITERATIONS) + c.phaseOffset_BackLeg)
@@ -23,7 +21,7 @@ from simulation import SIMULATION
 # numpy.save("data/backLegSensorValues", backLegSensorValues)
 # numpy.save("data/frontLegSensorValues", frontLegSensorValues)
 
-# p.disconnect()
 
 simulation = SIMULATION()
 simulation.Run()
+
