@@ -17,27 +17,7 @@ from simulation import SIMULATION
 # # numpy.save("data/targetAngles_BackLeg", targetAngles_BackLeg)
 # # exit()
 
-# for x in range(0,c.ITERATIONS):
-#     p.stepSimulation()
-#     time.sleep(1/60)
 
-#     backLegSensorValues[x] = pyrosim.Get_Touch_Sensor_Value_For_Link("BackLeg")
-#     frontLegSensorValues[x] = pyrosim.Get_Touch_Sensor_Value_For_Link("FrontLeg")
-
-#     pyrosim.Set_Motor_For_Joint(
-#         bodyIndex = robotId,
-#         jointName = "Torso_FrontLeg",
-#         controlMode = p.POSITION_CONTROL,
-#         targetPosition = targetAngles_FrontLeg[x],
-#         maxForce = c.MAX_FORCE)
-
-#     pyrosim.Set_Motor_For_Joint(
-#         bodyIndex = robotId,
-#         jointName = "Torso_BackLeg",
-#         controlMode = p.POSITION_CONTROL,
-#         targetPosition = targetAngles_BackLeg[x],
-#         maxForce = c.MAX_FORCE)
-    
     
 
 # numpy.save("data/backLegSensorValues", backLegSensorValues)
@@ -46,3 +26,4 @@ from simulation import SIMULATION
 # p.disconnect()
 
 simulation = SIMULATION()
+simulation.Run()
