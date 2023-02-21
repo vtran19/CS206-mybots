@@ -3,6 +3,10 @@ import math
 # Constants
 PI = math.pi
 ITERATIONS = 1000
+AMPLITUDE = PI/6
+FREQUENCY = 6
+PHASE_OFFSET = 0
+SLEEP = 1/60
 
 amplitude_FrontLeg = PI/6
 frequency_FrontLeg = 6
