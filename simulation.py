@@ -18,12 +18,13 @@ class SIMULATION:
         p.disconnect()
 
     def Run(self):
-        for x in range(0,c.ITERATIONS):
+        for timestep in range(0,c.ITERATIONS):
             p.stepSimulation()
             time.sleep(c.SLEEP)
 
-            self.robot.Sense(x)
-            self.robot.Act(x)
+            self.robot.Sense(timestep)
+            self.robot.Think()
+            self.robot.Act(timestep)
         
             
         
