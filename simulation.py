@@ -25,6 +25,9 @@ class SIMULATION:
             self.robot.Sense(timestep)
             self.robot.Think()
             self.robot.Act(timestep)
+    
+    def Get_Fitness(self):
+        self.robot.Get_Fitness()
         
             
         

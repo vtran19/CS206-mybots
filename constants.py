@@ -16,4 +16,6 @@ amplitude_BackLeg = PI/8
 frequency_BackLeg = 6
 phaseOffset_BackLeg = PI/2
 
+numberOfGenerations = 2
+
 MAX_FORCE = 500
