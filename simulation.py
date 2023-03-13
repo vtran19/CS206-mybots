@@ -7,8 +7,14 @@ import pyrosim.pyrosim as pyrosim
 import constants as c
 
 class SIMULATION:
-    def __init__(self):
-        self.physicsClient = p.connect(p.GUI)
+    def __init__(self, directOrGUI):
+        if directOrGUI == "DIRECT":
+            self.physicsClient = p.connect(p.DIRECT)
+            c.SLEEP = 0
+        else:
+            self.physicsClient = p.connect(p.GUI)
+            c.SLEEP = 1/60
+
         p.setAdditionalSearchPath(pybullet_data.getDataPath())
         p.setGravity(0,0,-9.8)
         self.world = WORLD()
